@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">普易云</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="nick_name">昵称: %1$d</string>
+
+    <string name="wait_repay">待还金额</string>
+    <string name="wait_receive">待收金额</string>
+
+    <string name="apply_on_line">在线申请</string>
+    <string name="repair_borrom">补借条</string>
+    <string name="search_credit">查信用</string>
+    <string name="main">我的</string>
+
+</resources>
