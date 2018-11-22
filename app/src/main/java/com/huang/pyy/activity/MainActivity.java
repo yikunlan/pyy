@@ -1,7 +1,7 @@
-package com.huang.pyy.main;
+package com.huang.pyy.activity;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.DrawableRes;
+import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,22 +12,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huang.pyy.R;
-import com.huang.pyy.main.fragement.MainFragment;
+import com.huang.pyy.fragement.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BasicActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     private String[] TITLES;
     private int[] mNornalImgResouce;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    void setRootView() {
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//因为不是所有的系统都可以设置颜色的，在4.4以下就不可以。。有的说4.1，所以在设置的时候要检查一下系统版本是否是4.1以上
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.bg));
+        }
         init();
         TabLayout mTablayout = (TabLayout) findViewById(R.id.timeline_tablayout);
 
@@ -52,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = tab.getCustomView().findViewById(R.id.tab_text);
                 textView.setTextColor(getResources().getColor(R.color.content_color));
                 ((ImageView)(tab.getCustomView().findViewById(R.id.tab_icon))).setImageResource(R.drawable.ic_launcher_background);
+                if(tab.getPosition() == 1){
+                    BasicInformationActivity.open(MainActivity.this);
+                }
             }
 
             @SuppressLint("ResourceAsColor")
@@ -69,10 +80,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//    }
+
+
 
     private void init(){
+        initTitle();
         TITLES = new String[]{getString(R.string.apply_on_line), getString(R.string.repair_borrom), getString(R.string.search_credit), getString(R.string.main)};
         mNornalImgResouce = new int[]{R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+        setTitle(getString(R.string.app_name));
     }
 
     /**

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.huang.pyy.main.MainActivity">
+    tools:context="com.huang.pyy.activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/title_view" android:id="@+id/rl_title"/>
         <android.support.v4.view.ViewPager
             android:id="@+id/container"
             android:layout_width="match_parent"

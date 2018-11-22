@@ -8,4 +8,10 @@
     <color name="main_color">#bc516d</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="bg">#efefef</color>
+    <color name="line">#c8c7cc</color>
+    <color name="cdcd">#cdcdcd</color>
+    <color name="f4">#f4f4f4</color>
+    <color name="text_sec">#999999</color>
+    <color name="text_fir">#333333</color>
 </resources>

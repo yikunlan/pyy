@@ -11,4 +11,24 @@
     <string name="search_credit">查信用</string>
     <string name="main">我的</string>
 
+    <!--个人信息-->
+    <string name="my_information">本人信息</string>
+    <string name="name">姓名</string>
+    <string name="wchat">微信号</string>
+    <string name="address_now">现居住地址</string>
+    <string name="address_detail">详细地址</string>
+
+    <string name="relation_person_1">紧急联系人1</string>
+    <string name="relation_with_me">TA是我的</string>
+    <string name="relation_person_name">联系人姓名</string>
+    <string name="relation_person_phone">联系人电话</string>
+    <string name="relation_person_name_input">请输入该联系人具体姓名</string>
+    <string name="relation_person_phone_input">请输入联系人电话</string>
+    <string name="relation_person_2">紧急联系人2</string>
+
+    <string name="next">下一步</string>
+
+
+
+
 </resources>

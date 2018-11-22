@@ -32,4 +32,18 @@ dependencies {
     //butterknife,这个搭配插件ButterKnife Zelezny使用更加方便快捷
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //时间选择器、省市区三级联动
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
+
+
+    //OKHTTP和retrofit
+    compile('org.ligboy.retrofit2:converter-fastjson-android:2.2.0') {
+        exclude module: 'fastjson'
+    }
+    //这个是retrofit对fastjson的支持，可用fastjson的方式来解析json数据
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
 }
